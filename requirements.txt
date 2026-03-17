@@ -1,0 +1,9 @@
+#first install these in your system
+FFMPEG
+
+#python Libraries
+PyNacl
+yt_dlp
+pyyaml
+discord
+asyncio
