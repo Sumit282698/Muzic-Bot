@@ -65,8 +65,16 @@ class Music(commands.Cog):
         else:
             self.is_playing = False
 
+
+#-------------Commands Section---------------------------------
+#You Can Add or Remove cmd's Here.
     @commands.command()
     async def play(self, ctx, *, search: str):
+        """
+        (Plays a Song)
+        Usage: play <url/name>
+        """
+
         if ctx.voice_client is None:
             if ctx.author.voice:
                 await ctx.author.voice.channel.connect(self_deaf=True)
@@ -108,6 +116,7 @@ class Music(commands.Cog):
 
     @commands.command()
     async def skip(self, ctx):
+        """(Skips the current Song)"""
         if ctx.voice_client and ctx.voice_client.is_playing():
             ctx.voice_client.stop()
             em = discord.Embed(title=f"{bot_name} Skipped the Song", description="Skipped the Song")
@@ -120,6 +129,7 @@ class Music(commands.Cog):
 
     @commands.command()
     async def stop(self, ctx):
+        """(Stops the Songs & Clears Queue)"""
         self.queue.clear()
         if ctx.voice_client:
             await ctx.voice_client.disconnect()
