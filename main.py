@@ -146,9 +146,15 @@ intents.guilds = True
 
 bot = commands.Bot(command_prefix=config['Bot_Prefix'], intents=intents)
 
+
+@bot.event
+async def on_ready():
+    print(f"{bot_name} is Online")
+    print("Fetched the data")
+    print("------------------------------------------------")
+
 async def main():
     await bot.add_cog(Music(bot))
     await bot.start(config["Token"])
-    await print("Bot Is Online")
 
 asyncio.run(main())
