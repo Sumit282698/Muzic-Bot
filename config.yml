@@ -1,0 +1,7 @@
+Bot_Name: "Muzic" #Edit Bot Name According to your Bot Preference.
+Bot_Prefix: "?" #leave empty  if no prefix or add more by  adding a comma (,) in between.
+Embed_Color: 0x0FF0000 #any hex Color Code.
+
+
+#important to add before running Bot
+Token: "Your Bot Token" #must Required.
